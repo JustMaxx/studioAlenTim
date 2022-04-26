@@ -1,0 +1,155 @@
+.footer {
+  background-color: #ffffff;
+  padding: 50px 0;
+  @media (max-width: 479.98px) {
+    padding: 30px 0;
+  }
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__block
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media (max-width: 767.98px) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+    @media (max-width: 767.98px) {
+      flex: 0 1 50%;
+    }
+    @media (max-width: 479.98px) {
+      flex: 0 1 100%;
+      text-align: center;
+      font-size: 36px;
+    }
+  }
+  &__logo-link {
+    font-size: 48px;
+    color: #162b29;
+  }
+  // .footer__menu
+
+  &__menu {
+    @media (max-width: 767.98px) {
+      flex: 0 1 50%;
+      text-align: end;
+    }
+    @media (max-width: 479.98px) {
+      margin: 25px 0 0 0;
+      flex: 0 1 100%;
+      text-align: center;
+    }
+  }
+
+  // .footer__list
+
+  &__list {
+    li {
+      margin: 0 0 15px 0;
+      &:last-child {
+        margin: 0px;
+      }
+    }
+  }
+
+  // .footer__link
+
+  &__link,
+  &__text {
+    font-weight: 600;
+    color: #162b29;
+    text-transform: uppercase;
+  }
+  &__link,
+  &__sub-link {
+    @media (min-width: 991.98px) {
+      &:hover {
+        color: #e76f3d;
+      }
+    }
+  }
+  &__sub-link {
+    text-transform: uppercase;
+    color: #313131;
+  }
+  // .footer__contacts
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    @media (max-width: 767.98px) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 30px 0 0 0;
+    }
+    @media (max-width: 479.98px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  // .footer__adress
+
+  &__adress {
+    @media (max-width: 767.98px) {
+      flex: 0 1 50%;
+    }
+    p {
+      margin: 0 0 5px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  // .footer__number
+
+  &__number {
+    margin: 26px 0;
+    text-align: end;
+    @media (max-width: 767.98px) {
+      margin: 0;
+      flex: 0 1 50%;
+    }
+    @media (max-width: 479.98px) {
+      text-align: center;
+    }
+    p {
+      &:first-child {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+      &:last-child {
+        font-size: 12px;
+        max-width: 300px;
+        @media (max-width: 767.98px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  // .footer__icon
+
+  &__icon {
+    @media (max-width: 767.98px) {
+      text-align: center;
+      margin: 15px 0 0 0;
+      width: 100%;
+    }
+  }
+}

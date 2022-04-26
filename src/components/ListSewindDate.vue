@@ -1,0 +1,39 @@
+<template>
+  <div class="list-sewinddate__row">
+                                <div class="list-sewinddate__column">
+                                    <div class="list-sewinddate__items">
+                                        <div class="list-sewinddate__date">{{item.date}}</div>
+                                    </div>
+                                </div>
+                                <div class="list-sewinddate__column">
+                                    <div class="list-sewinddate__items">
+                                        <div class="list-sewinddate__limit">{{item.limit}}</div>
+                                    </div>
+                                </div>
+                                <div class="list-sewinddate__column">
+                                    <div class="list-sewinddate__items">
+                                        <div class="list-sewinddate__delete" @click="removeDate(item.id).then(()=>getDates())">
+                                            <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="6.95316" y1="8.04675" x2="21.0953" y2="22.1889"/>
+                                                <line x1="7.18942" y1="22.189" x2="21.3316" y2="8.04691"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+</template>
+
+<script>
+export default {
+    name: 'ListSewindDate',
+    props:{
+        item:Object,
+        removeDate:Function,
+        getDates:Function
+    }
+}
+</script>
+
+<style>
+
+</style>
