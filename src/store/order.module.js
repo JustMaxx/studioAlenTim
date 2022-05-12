@@ -20,7 +20,7 @@ const orderModule = {
       sewindDate:'',
     },
     userOrder:{},
-    orders:[]
+    orders:[],
   },
   mutations:{
     SET_PERSONAL_INFO(state,payload){
@@ -58,6 +58,14 @@ const orderModule = {
     setMeasurement({commit}, data){
       commit('SET_MEASUREMENT',data)
     },
+    addNewOrderByAdmin({commit},data){
+      console.log(data)
+      OrderModule.addNewOrderByAdmin(data,data.adress)
+      .then((msg)=>{
+        console.log(msg)
+        commit('ADD_NEW_ORDER', msg)
+      }) 
+    },
     addNewOrder({commit,state}){
       OrderModule.addNewOrder(state.order, 
         (state.order.city + ',' + state.order.streetTitle + ',' + state.order.streetNumber + ',' + state.order.houseNumber).split(',')
@@ -93,11 +101,11 @@ const orderModule = {
     getUserOrder(state){
       return state.userOrder
     },
-    getAllOrders(state){
-      return state.orders
+    getAllOrders:state=>status=>{
+      return state.orders.filter(el=>el.status == status)
     },
     getOrderById:state=>id=>{
-      return state.orders.find(el=>el.id==id)
+      return state.orders.find(el=>el.orderId==id)
     }
   }
 }

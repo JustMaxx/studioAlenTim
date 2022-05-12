@@ -64,13 +64,13 @@ export default {
     },
     computed:{
         getAllOrders(){
-            return this.$store.getters['orderModule/getAllOrders']
+            return this.$store.getters['orderModule/getAllOrders'](0)
         }
     },
     mounted(){
         this.$store.dispatch('orderModule/setAllOrders')
         .then(()=>{
-            console.log(this.$store.getters['orderModule/getAllOrders'])
+            console.log(this.getAllOrders)
         })
     }
 }

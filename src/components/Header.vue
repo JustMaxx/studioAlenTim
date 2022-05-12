@@ -18,7 +18,6 @@
             </li>
             <li><router-link to="/delivery" class="header__link ">Доставка и оплата</router-link></li>
             <li><router-link to="/contacts" class="header__link ">Контакты</router-link></li>
-            <li><router-link to="/" class="header__link link">Профиль</router-link></li>    
             <li v-if="!isLogin"><router-link to="/signin" class="header__link link">Войти</router-link></li>
             <li v-if="isLogin">
               <router-link to="/profile"  class="header__link link">Профиль</router-link>
@@ -29,7 +28,7 @@
             <li v-if="isLogin">
               <router-link to="/main" @click="this.logout()" class="header__link link">Выход</router-link>
             </li>
-            <li><router-link to="/signin" class="header__link link">Войти</router-link></li>
+            <li v-if="!isLogin"><router-link to="/signin" class="header__link link">Войти</router-link></li>
           </ul>
         </nav>
         <div class="header__burger" @click="activeClick" :class="isActive ? '_active' : ''">

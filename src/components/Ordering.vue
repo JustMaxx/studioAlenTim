@@ -152,6 +152,7 @@ name: 'Ordering',
     },
     setDate(){
         this.order.sewindDate = this.getDates.filter(el=>el.id == this.order.dateId? el.date:'')[0].date
+        console.log(this.order.sewindDate)
     },
     handleFilesUpload(){
         let uploadedFiles = this.$refs.files.files;

@@ -7,12 +7,7 @@
         </div>
         <div class="sizes__column">
             <div class="sizes__items">
-                <input type="text" placeholder="Ввод">
-            </div>
-        </div>
-        <div class="sizes__column">
-            <div class="sizes__items">
-                <p class="sizes__item">{{sizeVary}}</p>
+                <input v-model="value" @change="this.$emit('addMeasurement', {id,value})" type="text" placeholder="Ввод">
             </div>
         </div>
   </div>
@@ -22,11 +17,14 @@
 export default {
     name:'MeasurementAdd',
     props:{
-    title: String,
-    size: Number,
-    sizeVary: Number
-}
-
+        title: String,
+        id:Number,
+    },
+    data(){
+        return{
+            value:'',
+        }
+    }
 }
 </script>
 

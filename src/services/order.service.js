@@ -9,6 +9,12 @@ addNewOrder(order,adress){
     return res.data
   })
 }
+addNewOrderByAdmin(order,adress){
+  return axios.post(API_URL+'addNewOrderByAdmin', {order, adress})
+  .then((res)=>{
+    return res.data
+  })
+}
 getUserOrder(userId){
   return axios.post(API_URL + 'orderById',{userId})
   .then((res)=>{

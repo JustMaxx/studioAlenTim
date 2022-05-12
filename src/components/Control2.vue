@@ -34,7 +34,7 @@
                             <div class="control__title">Номер телефона</div>
                         </div>
                   </div>
-                  <ControlOrder/>
+                  <ControlOrder v-for="(el,key) in getAllOrders" :key="key" :order="el"/>
               </div>
             </div>
         </div>
@@ -47,10 +47,15 @@ import HeadControl from './HeadControl.vue';
 
 export default {
 name:"Control2",
-components:{
-ControlOrder,
-HeadControl,
-},
+    components:{
+        ControlOrder,
+        HeadControl,
+    },
+    computed:{
+        getAllOrders(){
+            return this.$store.getters['orderModule/getAllOrders'](1)
+        }
+    },
 }
 </script>
 

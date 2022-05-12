@@ -17,26 +17,8 @@
               </div>
           </div>
       </div>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
-      <MeasurementAdd title='Высота спины до талии' size="56" sizeVary="50"/>
+      <MeasurementAdd v-for="(el,key) in titleMeasurement" :key="key" :title='this.titleMeasurement[key]' :id="key" :size="56" :sizeVary="50"/>
+
   </div>
 </template>
 
@@ -44,7 +26,17 @@
 import MeasurementAdd from './MeasurementAdd.vue'
 export default {
   components: { MeasurementAdd },
-    name: 'SizesAdd'
+    name: 'SizesAdd',
+    data(){
+        return {
+            titleMeasurement:['Высота спины до талии','Высота плеча косая','Высота бока','Ширина проймы',
+        'Ширина плеча','Обхват груди','Обхват талии',
+        'Обхват бедер','Высота яремной впадины','Длина полочки от талии',
+        'Обхват шеи','Длина рукава','Обхват бицепса','Обхват локтя',
+        'Обхват запястья','Высота сиденья','Высота колена',
+        'Обхват колена','Длина от талии до пола','Обхват щиклотки'],
+        }
+    }
 
 }
 </script>

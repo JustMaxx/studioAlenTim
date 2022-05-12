@@ -37,9 +37,16 @@ export default {
         'Обхват шеи','Длина рукава','Обхват бицепса','Обхват локтя',
         'Обхват запястья','Высота сиденья','Высота колена',
         'Обхват колена','Длина от талии до пола','Обхват щиклотки'],
-        arrayfunc: [(num)=>num-num/20,(num)=>num-num/20,(num)=>num-num/20,(num)=>{num},(num)=>{num},
-        (num)=>{return (num-num/20)/4 + "/" + (num-num/20)/12 }, (num)=>(num-num/100*8)/2,(num)=>num/2,(num)=>num-num/20,(num)=>num-num/20,(num)=>(num+3)/2,(num)=>(num-num/20)+1.5,
-        (num)=>(num/2)+1,(num)=>num/2,(num)=>num/2,(num)=>num-num/20,(num)=>num-num/20,(num)=>(num-num/20)/2, (num)=>(num-num/20)+1.5,(num)=>(num-num/20)/2]
+        arrayfunc: [(num)=>this.rounded(num-num/20),(num)=>this.rounded(num-num/20),(num)=>this.rounded(num-num/20),(num)=>{num},(num)=>{num},
+        (num)=>{return this.rounded((num-num/20)/4) + "/" + this.rounded((num-num/20)/12) }, (num)=>this.rounded((num-num/100*8)/2),
+        (num)=>this.rounded(num/2),(num)=>this.rounded(num-num/20),(num)=>this.rounded(num-num/20),(num)=>this.rounded((num+3)/2),(num)=>this.rounded((num-num/20)+1.5),
+        (num)=>this.rounded((num/2)+1),(num)=>this.rounded(num/2),(num)=>this.rounded(num/2),(num)=>this.rounded(num-num/20),(num)=>this.rounded(num-num/20),
+        (num)=>this.rounded((num-num/20)/2),(num)=>this.rounded((num-num/20)+1.5),(num)=>this.rounded((num-num/20)/2)]
+        }
+    },
+    methods:{
+        rounded(number){
+            return +number.toFixed(2);
         }
     }
 }

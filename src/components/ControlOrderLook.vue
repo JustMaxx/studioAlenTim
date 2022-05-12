@@ -69,7 +69,7 @@
                 <div class="order-details__item order-details__item_d">
                   <p class="order-details__text order-details__text_d">Эскизы от заказчика:</p>
                   <div class="order-details__image">
-                    <div class="order-details__item-image" v-for="(el,key) in order.pathPhoto" :key="key">
+                    <div class="order-details__item-image" v-for="(el,key) in order.pathPhoto" :key="key" >
                       <img :src="require(`../img/${this.$route.params.id}/${el}`)" alt="">
                     </div>
                   </div>
@@ -79,11 +79,8 @@
                 <div class="order-details__item order-details__item_d">
                   <p class="order-details__text order-details__text_d">Мои эскизы:</p>
                   <div class="order-details__image">
-                    <div class="order-details__item-image">
-                      <img src="../img/04.jpg" alt="">
-                    </div>
-                    <div class="order-details__item-image">
-                      <img src="../img/05.jpg" alt="">
+                    <div class="order-details__item-image" v-for="(el,key) in order.pathSketch" :key="key" >
+                      <img :src="require(`../img/${this.$route.params.id}/${el}`)" alt="">
                     </div>
                   </div>
                 </div>
@@ -131,9 +128,10 @@ export default {
         this.$store.dispatch('orderModule/setAllOrders')
         .then(()=>{
             console.log(this.$store.getters['orderModule/getAllOrders'])
+            console.log(this.getOrderById)
         })
         this.order = this.getOrderById
-        console.log(this.order)
+
     }
   };
   
